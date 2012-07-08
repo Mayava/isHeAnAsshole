@@ -13,10 +13,10 @@ $(document).ready(function(){
 			e.preventDefault();
 			$("#send").click(); 
 		}
-	});
+	}); 
 	
 	$("#send").click(function(){
-		var question = $("input[name=question]").attr('value');
+		var question = $("textarea[name=question]").attr('value');
 		console.log(question)
 		console.log("!")
 		postQuestion(question);
@@ -30,6 +30,10 @@ $(document).ready(function(){
 
 function getQuestions(){
 	//Need to getCookies();
+	var randomCookieNum = Math.floor(Math.random()*10000);
+	if ($.cookie("cabu" != true)){
+		$.cookie("cabu",randomCookieNum, { expires: 100 });
+	}
 	
 	$.ajax({
 		url: " https://api.parse.com/1/classes/questions", 
@@ -55,21 +59,23 @@ function getQuestions(){
 /////////////////////////////////////////////////////////////////////////////
 
 function updateView(questions) {	
-	var table=$(".table tbody"); //need to confirm this is the same
-	table.html('');
-	$.each(questions.results, function (index, value) {
-		//Need to add the id for the question here
-		var trEl=$('<tr><td>'+value.question+'</td><td><a id="' + value.objectId + '" class="btn vote" data-toggle="button" vote="yes">Yes way</a><a id="' + value.objectId + '" class="btn vote" data-toggle="button" vote="no">No way</a>'+ value.yes + '	|	' + value.no + '</td></tr>');		
-		table.append(trEl);		
+	var questionsList=$("#voting"); 
+	questionsList.html('');
+	$.each(questions.results, function (index, value) {	
+		var questionText = '<div class="span8"><p class="questionText">' + value.question + '</p></div>';
+		var yesButton = '<div class="span2"><a id="' + value.objectId + '" class="btn btn-success vote" type="submit" vote="yes"><i class="icon-thumbs-up icon-white"></i>Legitimate</a></div>';
+		var noButton = '<div class="span2"><a id="' + value.objectId + '" class="btn btn-danger vote" type="submit" vote="no"><i class="icon-thumbs-down icon-white"></i>Hell no</a></div></div>';
+		// var votingResults = '<div class="span1 invisible">' + value.yes + '</div>' + '<div class="span1 invisible">' + value.no + '</div>';
+		
+		questionsList.append(questionText,yesButton,noButton);
 	});
-
-	console.log(questions);
 		
 	$("a.vote").click(function(){
 		var questionId = $(this).attr("id"); 
 		var vote = $(this).attr("vote");
 		console.log(questionId, vote)
 		voteQuestion(questionId, vote);
+		$(this).addClass("invisible");
 	});
 }
 
@@ -78,7 +84,6 @@ function updateView(questions) {
 /////////////////////////////////////////////////////////////////////////////
 
 function postQuestion(question){
-	//backbone	
 	
 	$.ajax({
 		url: " https://api.parse.com/1/classes/questions", //Make sure this URL is correct
@@ -107,7 +112,7 @@ function postQuestion(question){
 // update an existing question based on questionId
 /////////////////////////////////////////////////////////////////////////////
 function voteQuestion(questionId, vote){
-	//Need to getCookies();
+	console.log("Here is our cookie " + $.cookie("cabu"));
 	
 	var yesAmount = ((vote === "yes") ? 1 : 0);
 	var noAmount = ((vote === "no") ? 1 : 0);
