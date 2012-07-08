@@ -1,8 +1,8 @@
 {
-  "name": "node-example",
+  "name": "is-he-an-asshole",
   "version": "0.0.1",
   "dependencies": {
-	"mongodb":"1.0.x",
+	"mongodb":"1.0.x"
   },
   "engines": {
     "node": "0.6.x"
