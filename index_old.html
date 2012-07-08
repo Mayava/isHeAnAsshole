@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" language="javascript" ></script>
+		<script src="app.js" type="text/javascript" language="javascript" ></script>
+		<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+		<!-- <link href="bootstrap/css/style.css" type="text/css" rel="stylesheet" /> -->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<h1>Click and Bitch</h1>
+			<div class="row-fluid">
+				<input class="new-question" type="text" name="question" placeholder="Question" />
+				<!-- This is sending the element that triggers a jquery fire to update messages-->
+				<a id="send" class="btn btn-primary">SEND</a> 
+			</div>
+			<div class="row-fluid">
+				<!-- <h1>Click and Bitch</h1> -->
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>
+								Questions
+							</th>
+							<th>
+								Voting
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">No messages</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
