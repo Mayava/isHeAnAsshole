@@ -87,4 +87,4 @@ exports.addMessage = function (data){
 };
 
 var messages=exports.getMessages();
-exports.addMessage("name=John&message=hi");
+exports.addMessage("name=John&question='My boyfriend sucks'&vote=1");
