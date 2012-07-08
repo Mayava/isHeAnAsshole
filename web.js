@@ -2,7 +2,6 @@ var http = require('http');
 var util = require('util');
 var querystring = require('querystring');
 var mongo = require('mongodb');
-var macaddr = require('./macaddr/macaddr.js');
 
 
 
@@ -16,15 +15,6 @@ mongo.Db.connect(process.env.MONGOHQ_URL, function(error, client) {
 	var app = http.createServer( function (request, response) {
 		
 		if (request.method==="GET"&&request.url==="/questions/list.json") {
-			
-			macaddr.address(function(err, addr) {
-			    if (addr) {
-			        console.log('MAC address: ' + addr);
-			    } else {
-			        console.log('MAC address not found');
-			    }
-			});
-						 
 			collection.find().toArray(function(error,results) {
 				response.writeHead(200,{'Content-Type':'text/plain'});
 				console.dir(results);
