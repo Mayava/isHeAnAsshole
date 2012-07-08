@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'macaddr' ]
+2 info using npm@1.1.33
+3 info using node@v0.8.1
+4 verbose config file /Users/patrickcushing/.npmrc
+5 verbose config file /usr/local/etc/npmrc
+6 verbose config file /usr/local/lib/node_modules/npm/npmrc
+7 verbose read json /Users/patrickcushing/Desktop/jsPrototyping/isHeAnAsshole/package.json
+8 verbose read json /Users/patrickcushing/Desktop/jsPrototyping/isHeAnAsshole/node_modules/mongodb/package.json
+9 verbose from cache /Users/patrickcushing/Desktop/jsPrototyping/isHeAnAsshole/package.json
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'macaddr', null ]
+12 silly cache add name=undefined spec="macaddr" args=["macaddr",null]
+13 verbose parsed url { pathname: 'macaddr', path: 'macaddr', href: 'macaddr' }
+14 verbose lock macaddr /Users/patrickcushing/.npm/37a06ce2cf729bb8de94e6a7f6a9ebb5ad847c95-macaddr.lock
+15 verbose addNamed [ 'macaddr', '' ]
+16 verbose addNamed [ null, '' ]
+17 verbose lock macaddr@ /Users/patrickcushing/.npm/697e5819fabb416b174c0713543798b6f0492db7-macaddr-.lock
+18 silly addNameRange { name: 'macaddr', range: '', hasData: false }
+19 verbose url raw macaddr
+20 verbose url resolving [ 'https://registry.npmjs.org/', './macaddr' ]
+21 verbose url resolved https://registry.npmjs.org/macaddr
+22 info retry registry request attempt 1 at 23:02:32
+23 http GET https://registry.npmjs.org/macaddr
+24 http 404 https://registry.npmjs.org/macaddr
+25 silly registry.get cb [ 404,
+25 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+25 silly registry.get     date: 'Sun, 08 Jul 2012 06:00:37 GMT',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'content-length': '52',
+25 silly registry.get     'cache-control': 'must-revalidate' } ]
+26 error 404 'macaddr' is not in the npm registry.
+26 error 404 You should bug the author to publish it
+26 error 404
+26 error 404 Note that you can also install from a
+26 error 404 tarball, folder, or http url, or git url.
+27 error System Darwin 10.8.0
+28 error command "node" "/usr/local/bin/npm" "install" "macaddr"
+29 error cwd /Users/patrickcushing/Desktop/jsPrototyping/isHeAnAsshole
+30 error node -v v0.8.1
+31 error npm -v 1.1.33
+32 error code E404
+33 error message 404 Not Found: macaddr
+34 verbose exit [ 1, true ]
