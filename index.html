@@ -3,14 +3,59 @@
 <head>
     <script type="text/javascript" src="http://ajaz.googleapis.com/ajaz/libs/jquery/1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
-    </head>
+    <style type="text/css">
+        #mainForm
+            {
+            position:absolute; top:30%; height:240px; margin-top:-120px; /* negative half of the height */
+            }
+        
+        #voting
+            {
+            position:absolute; top:90%; height:240px; margin-top:-120px; /* negative half of the height */
+            }
+        
+        .Title
+            {
+            color:#E38B07;letter-spacing:7pt;word-spacing:2pt;font-size:50px;text-align:center;font-family:georgia, serif;line-height:1;
+            }
+            
+        .questionText:first-letter
+            {
+            font-size: 2em;
+            font-family:georgia, serif
+            }
+     </style>
 
+</head>
+    
 <body>
-    <div class="container">
-        <form class="well">
-            <center><input type="text" class="span10" placeholder="What did he do this time...?!?">  
-            <button type="submit" class="btn btn-warning"><i class="icon-fire icon-white"> </i> Let 'er rip.</button></center>
-        </form>
-    </div>        
+
+<div id="mainForm">
+            <div class="container">
+            <div class="row offset4">    
+            <p class="Title">Click and Bitch</p>
+            <br>
+                <form class="well form-inline span10">
+                    <div class="row">
+                        <center><input type="text" class="span8" placeholder="What did he do... this time?">  
+                        <button type="submit" class="btn btn-warning"><i class="icon-fire icon-white"> </i> Let 'er rip.</button></center>
+                    </div>
+                </form>
+            </div>
+            </div>
+</div>
+
+<div id="voting">
+    <div class="row offset4">
+    <div class="span5">
+        <p class="questionText">Here is a sample question. Typewriter authentic beard pinterest four loko. Fap reprehenderit selvage brunch williamsburg, kale chips terry richardson dolor typewriter hella dreamcatcher sartorial. Sed dolor occupy, sriracha VHS helvetica bespoke veniam gluten-free photo booth seitan organic you probably haven't heard of them letterpress high life. Aute in skateboard, odd future organic wes anderson craft beer gentrify fugiat qui sustainable whatever williamsburg aliquip. Voluptate +1 minim, mumblecore aute pork belly officia sriracha nihil vinyl master cleanse. Gluten-free mumblecore locavore nisi single-origin coffee shoreditch. Pitchfork laborum single-origin coffee, +1 pickled sartorial banksy biodiesel post-ironic reprehenderit cred.</p></div>
+    <div class="span2 offset1 inline">
+        <button class="btn btn-success" type="submit"><i class="icon-thumbs-up icon-white"></i>  Legitimate</button></div>
+        <button class="btn btn-danger" type="submit"><i class="icon-thumbs-down icon-white"></i>  Oh hell no</button></div>
+    </div>
+
+</div>
+
 </body>
+
 </html>
